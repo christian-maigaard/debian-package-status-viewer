@@ -12,7 +12,7 @@ npm install
 ```
 
 ```bash
-yarn  install
+yarn start
 ```
 
 # Installation - Node server
@@ -24,7 +24,7 @@ npm install
 ```
 
 ```bash
-npm   start
+npm start
 ```
 
 # Tech/framework used 
