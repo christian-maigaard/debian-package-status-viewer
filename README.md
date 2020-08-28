@@ -3,12 +3,28 @@ A web interface for displaying packages and their dependencies in /var/lib/dpkg/
 
 
 
-# Installation 
+# Installation - React client
 
-Use the package manager [npm](https://www.npmjs.com/) to install dependencies.
+Navigate to the client folder and Use the package manager [npm](https://www.npmjs.com/) to install dependencies.
 
 ```bash
 npm install
+```
+
+```bash
+yarn  install
+```
+
+# Installation - Node server
+
+Navigate to the server folder and Use the package manager [npm](https://www.npmjs.com/) to install dependencies.
+
+```bash
+npm install
+```
+
+```bash
+npm   start
 ```
 
 # Tech/framework used 
