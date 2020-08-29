@@ -3,6 +3,7 @@ const packagesController = require("./PackagesController");
 const getPackage = (id, callback) => {
   packagesController.getAllPackages((packages) => {
     let package = packages.find((p) => p.Package === id);
+    if (package.length === 0) callback({});
     package = addDependencies(package);
     addReverseDependencies(package, packages, (enrichedPackage) => {
       callback(enrichedPackage);
@@ -13,6 +14,8 @@ const getPackage = (id, callback) => {
 // adds package dependencies and reverse dependencies to the package
 const addDependencies = (package) => {
   package.Dependencies = {};
+  if (package.Depends === undefined) return package;
+
   // Remove text between parentheses
   const PackageDependencies = package.Depends.replace(/ *\([^)]*\) */g, "");
   // format into list to make data ready for front-end

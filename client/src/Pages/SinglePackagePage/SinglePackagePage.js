@@ -1,7 +1,8 @@
 import React from "react";
-import Loading from "../../common/Loading";
 import { request } from "../../api/request";
 import envVariables from "../../envVariables";
+import Loading from "../../common/atoms/Loading";
+import ListItemLink from "../../common/atoms/ListItemLink";
 
 const SinglePackagePage = (props) => {
   const { packageId } = props;
@@ -18,14 +19,34 @@ const SinglePackagePage = (props) => {
 
   return (
     <div>
-      <h1>{debianPackage.Package}</h1>
-      <h2>Description</h2>
-      <p>{debianPackage.Description}</p>
-      <h2>Dependencies</h2>
-      {debianPackage.Depends !== undefined || debianPackage.Depends !== "" ? (
-        <p>{debianPackage.Package + " depends on " + debianPackage.Depends}</p>
+      {debianPackage.Package !== undefined ? (
+        <div>
+          <h1>{debianPackage.Package}</h1>
+          <h2>Description</h2>
+          <p>{debianPackage.Description}</p>
+          <h2>Dependencies</h2>
+
+          {debianPackage.Depends !== undefined ||
+          debianPackage.Depends !== "" ? (
+            <div>
+              <p>Package Dependencies</p>
+              {debianPackage.Dependencies.PackageDependencies.map(
+                (dependency) => {
+                  return (
+                    <ListItemLink
+                      text={dependency}
+                      link={"/packages/" + dependency}
+                    />
+                  );
+                }
+              )}
+            </div>
+          ) : (
+            <p>{debianPackage.Package + " has no dependencies"}</p>
+          )}
+        </div>
       ) : (
-        <p>{debianPackage.Package + " has no dependencies"}</p>
+        <Loading />
       )}
     </div>
   );
