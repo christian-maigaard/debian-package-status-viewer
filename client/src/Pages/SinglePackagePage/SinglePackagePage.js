@@ -2,7 +2,8 @@ import React from "react";
 import { request } from "../../api/request";
 import envVariables from "../../envVariables";
 import Loading from "../../common/atoms/Loading";
-import ListItemLink from "../../common/atoms/ListItemLink";
+
+import DependencyList from "../../common/molecules/DependencyList";
 
 const SinglePackagePage = (props) => {
   const { packageId } = props;
@@ -25,25 +26,22 @@ const SinglePackagePage = (props) => {
           <h2>Description</h2>
           <p>{debianPackage.Description}</p>
           <h2>Dependencies</h2>
+          <DependencyList
+            title="Package Dependencies"
+            dependencies={debianPackage.Dependencies.PackageDependencies}
+            missingDependenciesMessage={
+              debianPackage.Package + " has no package dependencies"
+            }
+          />
 
-          {debianPackage.Depends !== undefined ||
-          debianPackage.Depends !== "" ? (
-            <div>
-              <p>Package Dependencies</p>
-              {debianPackage.Dependencies.PackageDependencies.map(
-                (dependency) => {
-                  return (
-                    <ListItemLink
-                      text={dependency}
-                      link={"/packages/" + dependency}
-                    />
-                  );
-                }
-              )}
-            </div>
-          ) : (
-            <p>{debianPackage.Package + " has no dependencies"}</p>
-          )}
+          <DependencyList
+            title="Reverse Dependencies"
+            dependencies={debianPackage.Dependencies.ReverseDependencies}
+            missingDependenciesMessage={
+              debianPackage.Package + " has no reverse dependencies"
+            }
+          />
+
         </div>
       ) : (
         <Loading />
