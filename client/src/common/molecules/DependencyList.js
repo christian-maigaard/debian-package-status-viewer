@@ -8,10 +8,10 @@ const DependencyList = (props) => {
       <h4>{title}</h4>
       {dependencies.length > 0 ? (
         <div>
-          {dependencies.map((dependency) => {
+          {dependencies.map((dependency, index) => {
             return (
               <ListItemLink
-              
+                key={dependency + "-" + index}
                 text={dependency}
                 link={"/packages/" + dependency}
               />
