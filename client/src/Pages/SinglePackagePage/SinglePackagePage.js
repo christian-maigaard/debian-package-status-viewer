@@ -2,6 +2,7 @@ import React from "react";
 import { request } from "../../api/request";
 import envVariables from "../../envVariables";
 import Loading from "../../common/atoms/Loading";
+import { Link } from "react-router-dom";
 
 import DependencyList from "../../common/molecules/DependencyList";
 
@@ -22,6 +23,7 @@ const SinglePackagePage = (props) => {
     <div>
       {debianPackage.Package !== undefined ? (
         <div>
+          <Link to={"/packages"}>Go back</Link>
           <h1>{debianPackage.Package}</h1>
           <h2>Description</h2>
           <p>{debianPackage.Description}</p>
@@ -41,7 +43,6 @@ const SinglePackagePage = (props) => {
               debianPackage.Package + " has no reverse dependencies"
             }
           />
-
         </div>
       ) : (
         <Loading />

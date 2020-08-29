@@ -10,7 +10,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="container">
       <BrowserRouter>
         <Switch>
           <Route exact path="/packages" component={PackagesPage} />
