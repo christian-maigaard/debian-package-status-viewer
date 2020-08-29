@@ -17,7 +17,7 @@ const SinglePackagePage = (props) => {
       setDebianPackage(result);
     }
     fetch();
-  }, []);
+  }, [packageId]);
 
   return (
     <div>

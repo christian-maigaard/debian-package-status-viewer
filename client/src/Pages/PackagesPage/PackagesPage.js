@@ -2,7 +2,7 @@ import React from "react";
 import Loading from "../../common/atoms/Loading";
 import { request } from "../../api/request";
 import envVariables from "../../envVariables";
-import ListItemLink from '../../common/atoms/ListItemLink';
+import ListItemLink from "../../common/atoms/ListItemLink";
 
 const PackagesPage = () => {
   const [packages, setPackages] = React.useState([]);
@@ -18,9 +18,10 @@ const PackagesPage = () => {
   return (
     <div>
       {packages.length > 0 ? (
-        packages.map((item) => {
+        packages.map((item, index) => {
           return (
             <ListItemLink
+              key={item.Package + "-" + index}
               text={item.Package}
               link={"/packages/" + item.Package}
             />

@@ -11,6 +11,7 @@ const DependencyList = (props) => {
           {dependencies.map((dependency) => {
             return (
               <ListItemLink
+              
                 text={dependency}
                 link={"/packages/" + dependency}
               />
