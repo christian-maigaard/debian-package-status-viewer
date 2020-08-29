@@ -29,6 +29,8 @@ const getAllPackages = (callback) => {
     });
     // sort packages in alphabetical order
     packages.sort((a, b) => (a.Package > b.Package ? 1 : -1));
+    // remove any empty packages
+    packages = packages.filter((value) => Object.keys(value).length !== 0);
     callback(packages);
   });
 };

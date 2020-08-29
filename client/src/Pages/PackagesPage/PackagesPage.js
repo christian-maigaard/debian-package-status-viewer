@@ -20,7 +20,7 @@ const PackagesPage = (props) => {
         packages.map((p) => {
           return (
             <li key={p.Package}>
-              <a href="#">{p.Package}</a>
+              <a href={"/package/" + p.Package}>{p.Package}</a>
             </li>
           );
         })
