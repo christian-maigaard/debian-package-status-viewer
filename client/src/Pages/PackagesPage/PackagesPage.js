@@ -1,9 +1,9 @@
 import React from "react";
-import { request } from "../../api/request";
 import Loading from "../../common/Loading";
+import { request } from "../../api/request";
 import envVariables from "../../envVariables";
 
-const PackagesPage = (props) => {
+const PackagesPage = () => {
   const [packages, setPackages] = React.useState([]);
 
   React.useEffect(() => {
@@ -20,7 +20,7 @@ const PackagesPage = (props) => {
         packages.map((p) => {
           return (
             <li key={p.Package}>
-              <a href={"/package/" + p.Package}>{p.Package}</a>
+              <a href={"/packages/" + p.Package}>{p.Package}</a>
             </li>
           );
         })
