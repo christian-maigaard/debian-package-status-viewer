@@ -5,6 +5,8 @@ Live demo : https://debian-package-viewer.herokuapp.com/
 
 # Installation
 
+### Start server
+
 Navigate to the server folder and Use the package manager [npm](https://www.npmjs.com/) to install dependencies.
 
 ```bash
@@ -16,6 +18,8 @@ npm start
 ```
 
 This will start up a node server that serves a built version of the React application, which will suffice for simply running the application locally. 
+
+### Start React application
 
 For development purposes, having a React application running is necessary.
 
@@ -34,7 +38,7 @@ React and Node.js with Express
 
 # API Reference
 
-Get all packages
+### Get all packages
 
 ```http
 GET /api/packages
@@ -42,28 +46,28 @@ GET /api/packages
 returns a list of packages
 ```javascript
 [
-{
-  Package: string,
-  Status: string,
-  Priority: string,
-  Section: string,
-  Installed-Size: string,
-  Maintainer: string,
-  Architecture: string,
-  Version: string,
-  Depends: string,
-  Suggests: string,
-  Conffiles: string,
-  Description: string,
-  DesciptionSummary: string,
-  Homepage:string,
-  Original-Maintainer: string
-}
+  {
+    Package: string,
+    Status: string,
+    Priority: string,
+    Section: string,
+    Installed-Size: string,
+    Maintainer: string,
+    Architecture: string,
+    Version: string,
+    Depends: string,
+    Suggests: string,
+    Conffiles: string,
+    Description: string,
+    DesciptionSummary: string,
+    Homepage:string,
+    Original-Maintainer: string
+  }
 ...
 ]
 ```
 
-Get package by package name
+### Get package by package name
 
 ```http
 GET /api/packages/:package
