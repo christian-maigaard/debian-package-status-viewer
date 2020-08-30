@@ -3,7 +3,7 @@ import "../../App.css";
 
 const Loading = () => {
   return (
-    <div className="Loading-center">
+    <div className="loading-center">
       <h1>Loading...</h1>
     </div>
   );

@@ -18,6 +18,11 @@ function App() {
           <Redirect to="/packages" />
         </Switch>
       </BrowserRouter>
+      <div className="top-right">
+        <a href="https://github.com/christian-maigaard/debian-package-status-viewer">
+          <img src="/github.png" alt="github"></img>
+        </a>
+      </div>
     </div>
   );
 }

@@ -9,7 +9,6 @@ var packagesRouter = require("./routes/packages");
 var app = express();
 const PORT = process.env.PORT || 5000;
 
-// use it before all route definitions
 app.use(cors({ origin: "http://localhost:3000" }));
 
 app.use(logger("dev"));

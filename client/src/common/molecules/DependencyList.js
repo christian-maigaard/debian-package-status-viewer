@@ -3,26 +3,20 @@ import ListItemLink from "../../common/atoms/ListItemLink";
 
 const DependencyList = (props) => {
   const { title, dependencies, missingDependenciesMessage } = props;
+
+  const listItems = dependencies.map((dependency, index) => (
+    <ListItemLink
+      key={dependency.Dependency + "-" + index}
+      text={dependency.Dependency}
+      link={dependency.isListed ? "/packages/" + dependency.Dependency : ""}
+      isLink={dependency.isListed ? true : false}
+    />
+  ));
   return (
     <div>
       <h4>{title}</h4>
       {dependencies.length > 0 ? (
-        <div>
-          {dependencies.map((dependency, index) => {
-            return (
-              <ListItemLink
-                key={dependency.Dependency + "-" + index}
-                text={dependency.Dependency}
-                link={
-                  dependency.isListed
-                    ? "/packages/" + dependency.Dependency
-                    : ""
-                }
-                isLink={dependency.isListed ? true : false}
-              />
-            );
-          })}
-        </div>
+        <ul>{listItems}</ul>
       ) : (
         <i>{missingDependenciesMessage}</i>
       )}

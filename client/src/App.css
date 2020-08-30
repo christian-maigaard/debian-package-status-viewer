@@ -2,9 +2,15 @@
   padding: 20px;
 }
 
-.Loading-center {
+.loading-center {
   margin-top: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.top-right {
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
