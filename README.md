@@ -1,5 +1,5 @@
 # Debian Package Status Viewer
-A web interface for displaying packages and their dependencies in /var/lib/dpkg/status on Debian and Ubuntu systems. The web application is created by using React and Node.js. 
+A web interface for displaying packages and their dependencies in /var/lib/dpkg/status on Debian and Ubuntu systems. The web application is written in in React and Node.js. 
 
 # Demo 
 
