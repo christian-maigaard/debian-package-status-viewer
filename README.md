@@ -1,7 +1,12 @@
 # Debian Package Status Viewer
 A web interface for displaying packages and their dependencies in /var/lib/dpkg/status on Debian and Ubuntu systems
 
+# Demo 
+
 Live demo : https://debian-package-viewer.herokuapp.com/
+
+![alt text](https://github.com/christian-maigaard/debian-package-status-viewer/blob/master/images/debian-package-viewer-demo.gif?raw=true)
+
 
 # Installation
 
