@@ -60,14 +60,20 @@ returns a list of packages
   Original-Maintainer: string
 }
 ...
-}
+]
 ```
 
+Get package by package name
 
 ```http
 GET /api/packages/:package
 ```
 
+Returns the specificied package or a 404 Not Found, if the package is not listed.
+
+PackageDependencies is a list of packages that the specified package is dependent on. It cotains all the packages listed in the Depends property along with isListed which signifies if the package is include the package list.
+
+ReverseDependencies is a list of the reverse dependencies that is structured in a simmilar was as the PackageDependencies. 
 
 ```javascript
 {
@@ -90,24 +96,17 @@ GET /api/packages/:package
   PackageDependencies: [
     {
       Dependency: string,
-      isListed: true
+      isListed: boolean
     },
     ...
     ],
     ReverseDependencies: [    
       {
         Dependency: string,
-        isListed: true
+        isListed: boolean
       },
     ... 
     ],
-    UnlistedDependencies: [ 
-     {
-      Dependency: string,
-      isListed: true
-    },
-    ...
-    ]
   }
 }
 ´´´
