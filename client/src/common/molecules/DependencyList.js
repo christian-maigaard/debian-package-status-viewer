@@ -11,9 +11,14 @@ const DependencyList = (props) => {
           {dependencies.map((dependency, index) => {
             return (
               <ListItemLink
-                key={dependency + "-" + index}
-                text={dependency}
-                link={"/packages/" + dependency}
+                key={dependency.Dependency + "-" + index}
+                text={dependency.Dependency}
+                link={
+                  dependency.isListed
+                    ? "/packages/" + dependency.Dependency
+                    : ""
+                }
+                isLink={dependency.isListed ? true : false}
               />
             );
           })}

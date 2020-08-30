@@ -3,7 +3,6 @@ import { request } from "../../api/request";
 import envVariables from "../../envVariables";
 import Loading from "../../common/atoms/Loading";
 import { Link } from "react-router-dom";
-
 import DependencyList from "../../common/molecules/DependencyList";
 
 const SinglePackagePage = (props) => {
@@ -14,6 +13,7 @@ const SinglePackagePage = (props) => {
   React.useEffect(() => {
     async function fetch() {
       const result = await request(envVariables.PACKAGES_ENDPOINT + packageId);
+
       setDebianPackage(result);
     }
     fetch();

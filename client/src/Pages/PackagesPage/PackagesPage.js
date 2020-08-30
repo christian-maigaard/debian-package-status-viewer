@@ -24,6 +24,7 @@ const PackagesPage = () => {
               key={item.Package + "-" + index}
               text={item.Package}
               link={"/packages/" + item.Package}
+              isLink={true}
             />
           );
         })

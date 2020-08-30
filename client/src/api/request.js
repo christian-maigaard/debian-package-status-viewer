@@ -5,16 +5,12 @@ export async function request(url) {
         if (response.ok) {
           return response;
         } else {
-          var error = new Error(
-            "Error " + response.status + ": " + response.statusText
-          );
-          error.response = response;
-          throw error;
+          return response.statusCode;
         }
       },
       (error) => {
         var errmess = new Error(error.message);
-        throw errmess;
+        return errmess;
       }
     )
     .then((response) => response.json());

@@ -13,8 +13,13 @@ router.get("/", function (req, res, next) {
 /* GET package by id. */
 router.get("/:id", function (req, res, next) {
   packageController.getPackage(req.params.id, (package) => {
+    if (package === undefined)
+      res
+        .status(404)
+        .send("Not found");
     res.send(package);
   });
 });
 
 module.exports = router;
+  
