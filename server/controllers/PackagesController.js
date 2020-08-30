@@ -10,9 +10,9 @@ const getAllPackages = (callback) => {
 
     attributes.forEach((attribute) => {
       if (attribute !== "") {
-        var key = attribute.substr(0, attribute.indexOf(":"));
+        var key = attribute.substr(0, attribute.indexOf(": "));
         var value = attribute.substr(
-          attribute.indexOf(":") + 2,
+          attribute.indexOf(": ") + 2,
           attribute.length
         );
         let keyValue = handleDescriptionFormatting(package, key, value);
@@ -33,15 +33,12 @@ const getAllPackages = (callback) => {
 };
 
 const handleDescriptionFormatting = (package, key, value) => {
-  // when descriptions include a link with ":" they are not treated correctly, this is a fix for that
-  if (key.includes("https")) {
-    value = key + value;
-    key = "";
-  }
+  // add first part of a description as a special property
   if (key === "Description") {
     package["DesciptionSummary"] = value;
     value = "";
   }
+  // empty keys are currently always descriptions
   if (key === "") {
     key = "Description";
     if (value === ".") value = ""; // removes additional "." from description
