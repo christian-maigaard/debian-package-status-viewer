@@ -14,17 +14,25 @@ const getAllPackages = (callback) => {
           attribute.indexOf(":") + 2,
           attribute.length
         );
+
+        if (key === "Description") {
+          package["DesciptionSummary"] = value;
+          value = "";
+        }
         if (key === "") {
           key = "Description";
+          if (value === ".") value = ""; // removes additional "." from description
           value = previousDescriptionValue + " " + value;
         } else {
           previousDescriptionValue = "";
         }
+
         package[key] = value;
         previousDescriptionValue = value;
       } else {
         packages.push(package);
         package = {};
+        previousDescriptionValue = "";
       }
     });
     // sort packages in alphabetical order

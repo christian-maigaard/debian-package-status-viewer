@@ -23,10 +23,13 @@ const SinglePackagePage = (props) => {
     <div>
       {debianPackage.Package !== undefined ? (
         <div>
-          <Link to={"/packages"}>Go back</Link>
+          <Link to={"/packages"}>Package oveview</Link>
           <h1>{debianPackage.Package}</h1>
+          <p>{debianPackage.DesciptionSummary}</p>
           <h2>Description</h2>
+
           <p>{debianPackage.Description}</p>
+
           <h2>Dependencies</h2>
           <DependencyList
             title="Package Dependencies"

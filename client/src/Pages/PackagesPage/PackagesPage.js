@@ -17,6 +17,7 @@ const PackagesPage = () => {
 
   return (
     <div>
+      <h1>Packages</h1>
       {packages.length > 0 ? (
         packages.map((item, index) => {
           return (
