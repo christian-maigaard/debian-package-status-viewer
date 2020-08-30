@@ -1,9 +1,9 @@
 import React from "react";
-import { request } from "../../api/request";
-import envVariables from "../../envVariables";
-import Loading from "../../common/atoms/Loading";
+import { request } from "../api/request";
+import envVariables from "../envVariables";
+import Loading from "../common/atoms/Loading";
 import { Link } from "react-router-dom";
-import DependencyList from "../../common/molecules/DependencyList";
+import DependencyListSection from "../common/molecules/DependencyListSection";
 
 const SinglePackagePage = (props) => {
   const { packageId } = props;
@@ -31,7 +31,7 @@ const SinglePackagePage = (props) => {
           <p>{debianPackage.Description}</p>
 
           <h2>Dependencies</h2>
-          <DependencyList
+          <DependencyListSection
             title="Package Dependencies"
             dependencies={debianPackage.Dependencies.PackageDependencies}
             missingDependenciesMessage={
@@ -39,7 +39,7 @@ const SinglePackagePage = (props) => {
             }
           />
 
-          <DependencyList
+          <DependencyListSection
             title="Reverse Dependencies"
             dependencies={debianPackage.Dependencies.ReverseDependencies}
             missingDependenciesMessage={

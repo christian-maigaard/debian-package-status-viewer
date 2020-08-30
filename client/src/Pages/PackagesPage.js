@@ -1,9 +1,9 @@
 import React from "react";
-import Loading from "../../common/atoms/Loading";
-import { request } from "../../api/request";
-import envVariables from "../../envVariables";
-import ListItemLink from "../../common/atoms/ListItemLink";
-import "../../App.css";
+import Loading from "../common/atoms/Loading";
+import { request } from "../api/request";
+import envVariables from "../envVariables";
+import ListItemLink from "../common/atoms/ListItem";
+import "../App.css";
 
 const PackagesPage = () => {
   const [packages, setPackages] = React.useState([]);

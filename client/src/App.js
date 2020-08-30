@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import PackagesPage from "./Pages/PackagesPage/PackagesPage";
-import SinglePackagePage from "./Pages/SinglePackagePage/SinglePackagePage";
+import PackagesPage from "./Pages/PackagesPage";
+import SinglePackagePage from "./Pages/SinglePackagePage";
 import { Switch, Route, Redirect, BrowserRouter } from "react-router-dom";
 
 function App() {

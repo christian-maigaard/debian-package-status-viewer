@@ -1,5 +1,5 @@
 import React from "react";
-import ListItemLink from "../../common/atoms/ListItemLink";
+import ListItemLink from "../atoms/ListItem";
 
 const DependencyList = (props) => {
   const { title, dependencies, missingDependenciesMessage } = props;

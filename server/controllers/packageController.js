@@ -64,7 +64,6 @@ const addReverseDependencies = (package, packages, callback) => {
 const handlePipeCharacters = (package, packages, callback) => {
   let alternativeDependencies = [];
   let packageDependencies = package.Dependencies.PackageDependencies;
-  package.Dependencies.UnlistedDependencies = [];
   for (p in packageDependencies) {
     if (!packageDependencies[p].Dependency.includes("|")) continue;
     alternativeDependencies = packageDependencies[p].Dependency.split("|").map(
@@ -87,10 +86,6 @@ const handlePipeCharacters = (package, packages, callback) => {
   package.Dependencies.PackageDependencies.sort((a, b) =>
     a.Package > b.Package ? 1 : -1
   );
-  package.Dependencies.UnlistedDependencies.sort((a, b) =>
-    a.Package > b.Package ? 1 : -1
-  );
-
   callback(package);
 };
 
