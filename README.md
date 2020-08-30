@@ -107,7 +107,6 @@ ReverseDependencies is a list of the reverse dependencies that is structured in 
       },
     ... 
     ],
-  }
 }
 
 
