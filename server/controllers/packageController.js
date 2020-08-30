@@ -71,6 +71,14 @@ const handlePipeCharacters = (package, packages, callback) => {
     }
   });
 
+  // sort dependencies in alphabetical order
+  package.Dependencies.PackageDependencies.sort((a, b) =>
+    a.Package > b.Package ? 1 : -1
+  );
+  package.Dependencies.UnlistedDependencies.sort((a, b) =>
+    a.Package > b.Package ? 1 : -1
+  );
+
   callback(package);
 };
 
