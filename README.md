@@ -15,7 +15,7 @@ npm install
 npm start
 ```
 
-This will start up a node server that serves a built version of the React application, which will suffice for running the application locally. 
+This will start up a node server that serves a built version of the React application, which will suffice for simply running the application locally. 
 
 For development purposes, having a React application running is necessary.
 
